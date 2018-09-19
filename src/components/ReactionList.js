@@ -33,7 +33,7 @@ const ReactionList = ({ reactions, reactionKind, ...props }: Props) => {
         style={styles.container}
         data={reactionsOfKind}
         keyExtractor={(item, i) => item.id || '' + i}
-        listKey={reactionKind}
+        listKey={`${reactionKind}${Date.now()}`}
         renderItem={({ item }) => smartRender(props.Reaction, item)}
         {...props.flatListProps}
       />
